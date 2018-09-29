@@ -169,7 +169,7 @@ class SLDepartureBoardSensor(Entity):
        
         self._board = sorted(board, key=lambda k: k['time'])
 
-        _LOGGER.debug(self._board)
+        _LOGGER.info(self._board)
 
             
 class SlDepartureBoardData(object):
@@ -186,7 +186,7 @@ class SlDepartureBoardData(object):
     def update(self, **kwargs):
         """Get the latest data for this site from the API."""
         try:
-            _LOGGER.debug("fetching SL Data for '%s'", self._siteid)
+            _LOGGER.info("fetching SL Data for '%s'", self._siteid)
             url = "https://api.sl.se/api2/realtimedeparturesV4.json?key={}&siteid={}". \
                    format(self._apikey, self._siteid)
 
